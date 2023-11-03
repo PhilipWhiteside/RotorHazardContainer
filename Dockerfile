@@ -30,9 +30,10 @@ RUN if [ $(arch) = "arm64" ] \
 # 
 # ROTORHAZARD
 # ROTORHAZARD | DOWNLOAD
-ADD https://github.com/RotorHazard/RotorHazard/archive/refs/tags/v3.2.2.tar.gz /v3.2.2.tar.gz
-RUN tar -xf v3.2.2.tar.gz
-WORKDIR /RotorHazard-3.2.2/src/server
+ADD https://github.com/RotorHazard/RotorHazard/archive/refs/tags/v4.0.0.tar.gz /temp.tar.gz
+RUN tar -xf temptar.gz
+RUN rm temptar.gz
+WORKDIR /RotorHazard-4.0.0/src/server
 
 # ROTORHAZARD | INSTALL
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
